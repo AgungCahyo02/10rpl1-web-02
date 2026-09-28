@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumpulan Tabel Biodata & Kompleks</title>
+    <style>
+
+        body { 
+            margin: 0;
+            padding: 40px;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        /* --- TABEL 1 --- */
+
+        .tabel-1 {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 15px;
+            margin-bottom: 40px;
+        }
+
+        .tabel-1 td, .tabel-1 th {
+            border: 1px solid #000;
+            text-align: left;
+            padding: 12px 15px;
+        }
+
+        .tabel-1 tbody tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        .tabel-1 .Status {
+            text-align: center;
+            background-color: rgb(214, 214, 214);
+        }
+
+        .tabel-1 th {
+            color: #ffffff;
+            background-color: rgb(42, 20, 188);
+            padding: 14px;
+            text-align: left;
+        }
+
+        .T1 {
+            font-weight: bold;
+        }
+
+        /* --- TABEL 2 --- */
+
+        .tabel-2 {
+            width: 700px;
+            margin: auto;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+
+        .tabel-2 th {
+            background-color: #1976d2;
+            color: rgb(250, 249, 249);
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .tabel-2 td {
+            border: 1px solid #000;
+            padding: 9px;
+            font-size: 14px;
+        }
+
+        .kategori { width: 190px; }
+        .atribut { width: 220px; }
+        .hasil { width: 290px; }
+
+        .merge {
+            height: 145px;
+            text-align: center;
+            vertical-align: middle;
+            font-weight: bold;
+            font-size: 16px !important;
+            border: 3px solid #b52b27 !important;
+        }
+
+        .merge span {
+            color: #b52b27;
+            font-size: 12px;
+        }
+
+        .data-fisik {
+            vertical-align: middle;
+            font-weight: bold;
+        }
+
+        .split-box {
+            border: 3px dashed #159447;
+            padding: 8px;
+            color: #159447;
+            font-weight: bold;
+        }
+
+        .split-box table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+        }
+
+        .split-box td {
+            border: 1px solid #159447;
+            padding: 6px;
+            color: #333;
+            font-weight: normal;
+        }
+
+        .keterangan {
+            text-align: center;
+            font-weight: bold;
+            padding: 10px !important;
+            background-color: #ddd;
+        }
+
+        /* --- STYLE TABEL 3 --- */
+
+        .tabel-3 {
+            width: 680px;
+            margin: auto;
+            border-collapse: collapse;
+            table-layout: fixed;
+            margin-bottom: 40px;
+        }
+
+        .tabel-3 th {
+            background-color: #1976d2;
+            color: white;
+            border: 1px solid #000;
+            padding: 10px 8px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .tabel-3 td {
+            border: 1px solid #000;
+            padding: 9px;
+            font-size: 13px;
+            vertical-align: middle;
+        }
+
+        .kolom1 { width: 18%; }
+        .kolom2 { width: 25%; }
+        .kolom3 { width: 25%; }
+        .kolom4 { width: 32%; }
+
+        .merge-2 {
+            height: 125px;
+            text-align: center;
+            font-weight: bold;
+            border: 3px solid #b52b27 !important;
+        }
+
+        .merge-2 .judul { font-size: 15px; }
+        .merge-2 .keterangan-text {
+            color: #b52b27;
+            font-size: 10px;
+        }
+
+        .kontak {
+            text-align: center;
+            font-weight: bold;
+            border: 3px solid #b52b27 !important;
+        }
+
+        .kontak span {
+            color: #b52b27;
+            font-size: 10px;
+        }
+
+        .split {
+            border: 3px dashed #159447;
+            padding: 7px;
+            color: #159447;
+            font-weight: bold;
+        }
+
+        .split table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+        }
+
+        .split table td {
+            border: 1px solid #159447;
+            padding: 5px;
+            color: #222;
+            font-weight: normal;
+            background-color: white;
+        }
+
+        .catatan {
+            text-align: center;
+            font-weight: bold;
+            font-size: 12px !important;
+            background-color: #ccc;
+        }
+
+        .merah { color: #b52b27; }
+        .hijau { color: #159447; }
+        
+        hr {
+            margin: 40px 0;
+            border: 0;
+            border-top: 1px solid #ccc;
+        }
+
+        .G1 {
+            margin-top: 1px;
+            margin-bottom: 1px;
+            margin-left: 1px;
+            margin-right: 1px;
+            text-align: right;
+            
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- TABEL 1 -->
+
+    <h2>Data Biodata Siswa PPLG</h2>
+
+    <table class="tabel-1">
+        <thead>
+            <tr>
+                <th>Field / atribut</th>
+                <th>Keterangan / Hasil input</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="T1">Nama</td>
+                <td>Agung Cahyo</td>
+            </tr>
+            <tr>
+                <td class="T1">Alamat</td>
+                <td>JL. Margonoyo RT04 RW01 Desa Ngajum</td>
+            </tr>
+            <tr>
+                <td class="T1">Jurusan</td>
+                <td>RPL</td>
+            </tr>
+            <tr>
+                <td class="T1">Jenis kelamin</td>
+                <td>Laki-laki</td>
+            </tr>
+            <tr>
+                <td class="T1">Tinggi Badan (cm)</td>
+                <td>164</td>
+            </tr>
+            <tr>
+                <td class="T1">Berat Badan (kg)</td>
+                <td>43</td>
+            </tr>
+            <tr>
+                <td class="T1">Hobi</td>
+                <td>Bermain Game</td>
+            </tr>
+            <tr>
+                <td class="T1">No.HP</td>
+                <td>085606578925</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="Status"><strong>Status: </strong> Data berhasil divalidasi dan direkap ke dalam tabel</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <!-- TABEL 2 -->
+
+    <h2>Merge &amp; Split</h2>
+
+    <table class="tabel-2">
+        <thead>
+            <tr>
+                <th class="kategori">Kategori Data</th>
+                <th class="atribut">Atribut Form</th>
+                <th class="hasil">Hasil Isian Siswa</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="3" class="merge">
+                    IDENTITAS PRIBADI<br>
+                    <span>(Merged 3 Baris)</span>
+                </td>
+                <td>Nama:</td>
+                <td>Agung Cahyo</td>
+            </tr>
+            <tr>
+                <td>Alamat:</td>
+                <td>JL. Margonoyo RT04 RW01 Desa Ngajum</td>
+            </tr>
+            <tr>
+                <td>No. HP:</td>
+                <td>085606578925</td>
+            </tr>
+            <tr>
+                <td>Akademik</td>
+                <td>Jurusan:</td>
+                <td>RPL</td>
+            </tr>
+            <tr>
+                <td>Preferensi</td>
+                <td>Jenis Kelamin:</td>
+                <td>Laki-laki</td>
+            </tr>
+            <tr>
+                <td class="data-fisik">Data Fisik</td>
+                <td>Pengukuran Badan:</td>
+                <td>
+                    <div class="split-box">
+                        SPLIT CELL (Dipecah):
+                        <table>
+                            <tr>
+                                <td>Tinggi:</td>
+                                <td>164 cm</td>
+                            </tr>
+                            <tr>
+                                <td>Berat:</td>
+                                <td>43 kg</td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Lain-lain</td>
+                <td>Hobi:</td>
+                <td>Bermain Game</td>
+            </tr>
+            <tr>
+                <td colspan="3" class="keterangan">
+                    Garis Merah = Area Merge Cell | Garis Hijau = Area Split Cell
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <!-- TABEL 3 -->
+
+    <h2>Tantangan Tabel Kompleks =&gt; Merge (Merah) &amp; Split (Hijau)</h2>
+
+    <table class="tabel-3">
+        <thead>
+            <tr>
+                <th class="kolom1">Kategori<br>Utama</th>
+                <th class="kolom2">Sub Kategori</th>
+                <th class="kolom3">Atribut Isian</th>
+                <th class="kolom4">Detail Data / Nilai</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="3" class="merge-2">
+                    <div class="judul">DATA SISWA</div>
+                    <div class="keterangan-text">(Rowspan 3)</div>
+                </td>
+                <td rowspan="2">Identitas Utama</td>
+                <td>Nama Lengkap</td>
+                <td>Agung Cahyo</td>
+            </tr>
+            <tr>
+                <td>Alamat Rumah</td>
+                <td>JL. Margonoyo RT04 RW01 Desa Ngajum</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="kontak">
+                    Kontak Aktif: 085606578925
+                    <span>(Colspan 2)</span>
+                </td>
+                <td>Hobi: Bermain Game</td>
+            </tr>
+            <tr>
+                <td>Akademik</td>
+                <td>Jurusan PPLG</td>
+                <td>Pilihan Kelas</td>
+                <td>RPL (Rekayasa<br>Perangkat Lunak)</td>
+            </tr>
+            <tr>
+                <td>Preferensi</td>
+                <td>Gender</td>
+                <td>Jenis Kelamin</td>
+                <td>Laki-laki</td>
+            </tr>
+            <tr>
+                <td style="height:150px;">Antropometri</td>
+                <td>Pengukuran Fisik</td>
+                <td>Parameter Badan</td>
+                <td>
+                    <div class="split">
+                        SPLIT CELL (Dipecah<br>jadi 2 sub-sel):
+                        <table>
+                            <tr>
+                                <td><b>Tinggi Badan:</b> 164 cm</td>
+                            </tr>
+                            <tr>
+                                <td><b>Berat Badan:</b> 43 kg</td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" class="catatan">
+                    Keterangan: Kotak bergaris <span class="merah">Merah</span> adalah hasil <strong>Merge Cell</strong>, sedangkan kotak bergaris <span class="hijau">Hijau</span> adalah simulasi <strong>Split Cell</strong>.
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="G1">
+    <a href="https://www.google.com/?hl=id" target="_blank">
+        <img src="D:\VS code\Foto\✧ Arona ✧.jpg" alt="foto si biru" width="10" height="10">
+    </a>
+    </div>
+</body>
+</html>

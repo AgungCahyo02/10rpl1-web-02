@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Utama - PPLG</title>
+    <style>
+        /* Mengatur tampilan dasar dengan tema hijau gelap (Dark Green) */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0d1a12; /* Hijau sangat gelap untuk background */
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Kotak pembungkus utama untuk tampilan HP (Mobile First) */
+        .container {
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Gaya untuk pesan header "Pilih menu di bawah:" */
+        .header-chat {
+            background-color: #143621; /* Hijau tua */
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-chat .time {
+            font-size: 12px;
+            color: #8fa696; /* Warna waktu hijau keabu-abuan */
+        }
+
+        /* Daftar menu */
+        .menu-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px; /* Jarak antar tombol sedikit diperlebar untuk animasi */
+        }
+        
+        /* Modifikasi warna judul agar selaras dengan tema hijau */
+        .menu-list h1 {
+            color: #4ade80; /* Warna hijau terang untuk judul */
+            text-align: center;
+            font-size: 22px;
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+
+        /* Gaya untuk setiap tombol menu */
+        .menu-item {
+            background-color: #1c4b2e; /* Warna dasar tombol hijau */
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #2a6942; /* Garis tepi hijau */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            /* Menambahkan transisi untuk animasi yang mulus */
+            transition: all 0.3s ease; 
+        }
+
+        /* Efek animasi saat tombol disentuh atau di-hover */
+        .menu-item:hover {
+            background-color: #24633d; /* Hijau sedikit lebih terang */
+            transform: translateY(-5px); /* Efek tombol terangkat ke atas */
+            box-shadow: 0 8px 15px rgba(36, 99, 61, 0.4); /* Efek cahaya bayangan di bawah tombol */
+        }
+        
+        /* Efek animasi saat tombol diklik (ditekan) */
+        .menu-item:active {
+            transform: translateY(2px); /* Efek tombol ditekan ke dalam */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Bayangan mengecil */
+        }
+
+        /* Memberi jarak antara ikon emoji dan teks */
+        .menu-item span {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header Mirip Chat Telegram/WA -->
+        <div class="header-chat">
+            <span>Pilih menu di bawah</span>
+            <span class="time">04:41</span>
+        </div>
+
+        <!-- Daftar Tombol Menu -->
+        <div class="menu-list">
+
+            <h1>TEST HALAMAN INDEX</h1>
+            <!-- Ganti tanda # dengan link file html atau link tujuan Bapak -->
+            <a href="index1.html" class="menu-item"><span>📊</span> Form Biodata</a>
+            <a href="index2.html" class="menu-item"><span>📋</span> Hasil Biodata</a>
+            <a href="tabel.html" class="menu-item"><span>🔎</span> Tabel</a>
+            <!--<a href="#" class="menu-item"><span>🚩</span> Cek Kecurigaan Hari Ini</a>
+            <a href="#" class="menu-item"><span>📍</span> Kunci Lokasi PKL</a>
+            <a href="#" class="menu-item"><span>📊</span> Cek Kehadiran Bimbingan PKL</a>
+            <a href="#" class="menu-item"><span>📋</span> Pending Approval PKL</a>
+            <a href="#" class="menu-item"><span>📔</span> Cek Jurnal Bimbingan PKL</a>-->
+            
+            <!-- Contoh jika menu ini mengarah ke file atau web lain -->
+            <a href="https://github.com/AgungCahyo02" class="menu-item"><span>🌐</span> Ke Web</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
