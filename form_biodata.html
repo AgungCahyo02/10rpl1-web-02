@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata Form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 450px;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        input[type="text"],
+        input[type="number"],
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 15px;
+            outline: none;
+            background: #fff;
+        }
+        
+        .select-wrapper {
+            position: relative;
+            width: 100%;
+        }
+        .select-wrapper select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 15px;
+            outline: none;
+            background: #f1f1f1; 
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            cursor: pointer;
+            padding-right: 35px;
+        }
+        .select-wrapper::after {
+            content: "";
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            border-right: 2px solid #333;
+            border-bottom: 2px solid #333;
+            transform: translateY(-70%) rotate(45deg);
+            pointer-events: none;
+        }
+
+        input:focus, textarea:focus, .select-wrapper select:focus {
+            border-color: #007bff;
+        }
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            padding-top: 5px;
+        }
+        .radio-label {
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+            font-size: 15px;
+            cursor: pointer;
+            margin: 0;
+        }
+        .radio-label input {
+            margin-right: 6px;
+            width: 16px;
+            height: 16px;
+        }
+        .btn-submit {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn-submit:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>BIODATA</h1>
+
+        <form id="biodataForm">
+            <div class="form-group">
+                <label>Nama:</label>
+                <input type="text" id="nama" required>
+            </div>
+
+            <div class="form-group">
+                <label>Alamat:</label>
+                <textarea id="alamat" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Jurusan:</label>
+                <div class="select-wrapper">
+                    <select id="jurusan">
+                        <option value="RPL">RPL</option>
+                        <option value="TKJ">TKJ</option>
+                        <option value="TSM">TSM</option>
+                        <option value="TEI">TEI</option>
+                        <option value="TKR">TKR</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Jenis Kelamin:</label>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="jk" value="Laki-laki" checked> Laki-laki
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="jk" value="Perempuan"> Perempuan
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Tinggi Badan (cm):</label>
+                <input type="number" id="tinggi" required>
+            </div>
+
+            <div class="form-group">
+                <label>Berat Badan (kg):</label>
+                <input type="number" id="berat" required>
+            </div>
+
+            <div class="form-group">
+                <label>Hobi:</label>
+                <input type="text" id="hobi" required>
+            </div>
+
+            <div class="form-group">
+                <label>No. HP:</label>
+                <input type="text" id="nohp">
+            </div>
+
+            <button type="submit" class="btn-submit">Simpan</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('biodataForm');
+        const nohpInput = document.getElementById('nohp');
+
+        nohpInput.addEventListener('input', function() {
+            let val = this.value.replace(/\D/g, ''); 
+            if (val.length > 13) {
+                val = val.substring(0, 13);
+            }
+            this.value = val;
+        });
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const dataBiodata = {
+                nama: document.getElementById('nama').value,
+                alamat: document.getElementById('alamat').value,
+                jurusan: document.getElementById('jurusan').value,
+                jk: document.querySelector('input[name="jk"]:checked').value,
+                tinggi: document.getElementById('tinggi').value,
+                berat: document.getElementById('berat').value,
+                hobi: document.getElementById('hobi').value,
+                nohp: nohpInput.value
+            };
+
+            localStorage.setItem('biodata', JSON.stringify(dataBiodata));
+            window.location.href = 'hasil_biodata.html';
+        });
+    </script>
+</body>
+</html>
