@@ -134,10 +134,70 @@
             width: 36px;
             height: 36px;
             place-items: center;
+            padding: 0;
             border: 1px solid #66854c;
+            background: transparent;
             color: var(--accent);
             font-family: Georgia, serif;
             font-size: 20px;
+            cursor: pointer;
+        }
+
+        .brand-mark:hover,
+        .brand-mark:focus-visible {
+            background: var(--surface-raised);
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        .video-dialog {
+            width: min(900px, calc(100% - 32px));
+            max-width: none;
+            padding: 24px;
+            border: 1px solid var(--line);
+            background: var(--surface);
+            color: var(--text);
+        }
+
+        .video-dialog::backdrop {
+            background: rgba(0, 0, 0, 0.82);
+        }
+
+        .video-dialog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .video-dialog h2 {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 24px;
+            font-weight: 400;
+        }
+
+        .video-close {
+            border: 1px solid var(--line);
+            padding: 8px 12px;
+            background: var(--surface-raised);
+            color: var(--text);
+            font: inherit;
+            cursor: pointer;
+        }
+
+        .video-player {
+            display: block;
+            width: 100%;
+            max-height: 70vh;
+            background: #000;
+        }
+
+        .video-message {
+            margin: 12px 0 0;
+            color: var(--muted);
+            font-size: 14px;
         }
 
         .status {
@@ -267,7 +327,7 @@
     <div class="container">
         
         <header class="topbar">
-            <div class="brand"><span class="brand-mark">A</span><span>RUANG DIGITAL</span></div>
+            <div class="brand"><button class="brand-mark" id="open-video" type="button" aria-label="Putar video">A</button><span>RUANG DIGITAL</span></div>
             <span class="status">Beranda</span>
         </header>
 
@@ -298,6 +358,47 @@
         </section>
 
     </div>
+
+    <dialog class="video-dialog" id="video-dialog" aria-labelledby="video-title">
+        <div class="video-dialog-header">
+            <h2 id="video-title">Video</h2>
+            <button class="video-close" id="close-video" type="button">Tutup</button>
+        </div>
+        <video class="video-player" id="video-player" controls playsinline>
+            <source src="tampilan-video.mp4`" type="video/mp4">
+            Video belum tersedia. Simpan file dengan nama video.mp4 di folder proyek.
+        </video>
+        <p class="video-message" id="video-message" role="status" hidden></p>
+    </dialog>
+
+    <script>
+        const videoDialog = document.getElementById("video-dialog");
+        const videoPlayer = document.getElementById("video-player");
+        const videoMessage = document.getElementById("video-message");
+
+        document.getElementById("open-video").addEventListener("click", () => {
+            videoDialog.showModal();
+            videoMessage.hidden = true;
+            videoPlayer.play().catch(() => {
+                videoMessage.textContent = "Tidak dapat memutar video. Pastikan file video.mp4 tersedia di folder proyek.";
+                videoMessage.hidden = false;
+            });
+        });
+
+        document.getElementById("close-video").addEventListener("click", () => {
+            videoPlayer.pause();
+            videoDialog.close();
+        });
+
+        videoDialog.addEventListener("close", () => {
+            videoPlayer.pause();
+        });
+
+        videoPlayer.addEventListener("error", () => {
+            videoMessage.textContent = "Video tidak ditemukan atau formatnya tidak didukung. Simpan video dengan nama video.mp4 di folder proyek.";
+            videoMessage.hidden = false;
+        });
+    </script>
 
 </body>
 </html>
