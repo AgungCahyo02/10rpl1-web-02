@@ -27,7 +27,7 @@ function setTheme(theme) {
 }
 
 const savedTheme = localStorage.getItem("portfolio-theme");
-const initialTheme = savedTheme === "dark" ? "dark" : "light";
+const initialTheme = savedTheme === "light" ? "light" : "dark";
 
 document.documentElement.dataset.theme = initialTheme;
 updateThemeControls(initialTheme);
